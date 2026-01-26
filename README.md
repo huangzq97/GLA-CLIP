@@ -15,7 +15,7 @@ GLACLIP follows a **two-stage training strategy** to decouple and align global�
 
 - **Stage 2 – Visual–Text Alignment**  
   Visual encoder and local prompts are optimized to align image / pixel features with the frozen text anchors.
-
+![alt text](asset/figure1.jpg)
 `asset/figure1.jpg` illustrates the overall architecture and training pipeline.
 
 - 图 1（`asset/figure1.jpg`）展示了 GLACLIP 的整体结构：
@@ -287,3 +287,4 @@ If you find this repository helpful for your research, please consider citing th
 
 For questions or issues, please open an issue in this repository.  
 如有问题或建议，请在本仓库中提交 issue 进行反馈。
+
