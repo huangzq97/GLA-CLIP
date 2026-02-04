@@ -18,6 +18,8 @@ GLACLIP follows a **two-stage training strategy** to decouple and align global�
 
 `asset/figure1.jpg` illustrates the overall architecture and training pipeline.
 ![alt text](asset/figure1.jpg)
+![第一篇论文网络框架_2](https://github.com/user-attachments/assets/0dfe5a68-aaf6-4ff1-a4a2-fe4756ef79a5)
+
 - 图 1（`asset/figure1.jpg`）展示了 GLACLIP 的整体结构：
   - 上半部分：Stage 1，全局与局部文本锚点的解耦与对比学习。
   - 下半部分：Stage 2，将视觉特征与已学得的文本锚点进行对齐，实现图像级与像素级异常检测。
@@ -287,3 +289,4 @@ If you find this repository helpful for your research, please consider citing th
 
 For questions or issues, please open an issue in this repository.  
 如有问题或建议，请在本仓库中提交 issue 进行反馈。
+
