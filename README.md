@@ -32,6 +32,7 @@ Stage 2: Visual–Text Alignment
 Qualitative comparison with prior CLIP-based anomaly detectors (WinCLIP, AnomalyCLIP, AdaCLIP, AACLP, GlocalCLIP) is shown in `asset/figure2.jpg`.
 - 图 2（`asset/figure2.jpg`）给出了与 WinCLIP、AnomalyCLIP、AdaCLIP、AACLP、GlocalCLIP 等方法在多类工业数据集上的可视化对比，GLA-CLIP 在异常区域定位上更加准确、背景响应更低。
 
+![figure2](https://github.com/user-attachments/assets/859c706a-e341-470a-b1de-20d3878cbf6e)
 
 ---
 
@@ -60,6 +61,7 @@ The main contributions of this work are summarized as follows:
 ### 3.1 Main Results on Industrial Datasets / 工业数据集主结果
 
 `asset/table1.png` (`Table 1`) reports the performance of GLACLIP and previous state-of-the-art zero-shot anomaly detection (ZSAD) methods on **MVTec AD**, **VisA**, **MPDD**, **BTAD** across both image-level and pixel-level metrics.
+<img width="965" height="749" alt="image" src="https://github.com/user-attachments/assets/6eb96a38-948a-42dd-b8d9-d917df1f5c9c" />
 
 - 表 1（`asset/table1.png`）展示了 GLACLIP 在 MVTec AD、VisA、MPDD、BTAD 四个工业异常检测数据集上的图像级和像素级指标，与 WinCLIP、AnomalyCLIP、AdaCLIP、GlocalCLIP、AACLP 等方法对比：
   - 采用 AUROC、AP（图像级）和 AUROC、AUPRO（像素级）作为评价指标。
@@ -68,6 +70,7 @@ The main contributions of this work are summarized as follows:
 ### 3.2 Key Component Ablation / 关键模块消融
 
 `asset/table2.png` (`Table 2`) presents the ablation of key components on MVTec AD and VisA datasets.
+<img width="968" height="351" alt="image" src="https://github.com/user-attachments/assets/d85f0392-fcf9-4be6-816d-f54be7af8096" />
 
 - 表 2（`asset/table2.png`）对模型的关键组件进行了消融实验：
   - 在 Base 模型基础上，逐步加入不同模块（例如改进的文本提示、残差适配器等），观察像素级与图像级指标的提升。
@@ -75,6 +78,7 @@ The main contributions of this work are summarized as follows:
 ### 3.3 Two-Stage Training Strategy / 两阶段训练策略消融
 
 `asset/table3.png` (`Table 3`) studies different training strategies on MVTec AD and VisA.
+<img width="968" height="233" alt="image" src="https://github.com/user-attachments/assets/e1db470b-b203-4c01-b183-5807ef47798a" />
 
 - 表 3（`asset/table3.png`）比较了仅训练 Stage 1、仅训练 Stage 2 以及完整两阶段训练三种策略：
   - 结果表明，两阶段联合训练在图像级与像素级上都取得了最优性能，验证了先学习文本锚点、再对齐视觉特征的有效性。
@@ -251,33 +255,7 @@ python generate_dataset_json/btad.py
   测试脚本会输出每类的图像级 / 像素级指标，并在 `save_path` 下保存 `test_results.json` 与 `test_info.json` 以便复现论文表格中的结果。
 ---
 
-## 8. Core Files / 核心文件说明
-
-- `train.py` – Two-stage training script implementing `TwoStageTrainer` and CLI arguments.  
-  两阶段训练脚本，实现 `TwoStageTrainer` 以及完整的命令行接口。
-
-- `test.py` – Evaluation script for image-level & pixel-level anomaly detection with logging and JSON export.  
-  测试与评估脚本，计算图像级 / 像素级指标并导出 JSON 结果。
-
-- `glocal_prompt_generator.py` – Defines `GLACLIP_PromptLearner`, `ResidualAdapter` and `TripletLoss`, i.e., the global–local prompt generator and adapter modules.  
-  定义 `GLACLIP_PromptLearner`、`ResidualAdapter` 与 `TripletLoss` 的文件，是全局–局部提示生成与对比损失的核心实现。
-
-- `dataset.py` – Dataset wrapper and class-mapping utilities for industrial datasets.  
-  数据读取与类别映射工具，支持 MVTec AD、VisA、MPDD、BTAD 等数据集。
-
-- `metrics.py` – Implements image-level and pixel-level metrics such as AUROC, AP, AUPRO, F1.  
-  指标计算模块，实现图像级和像素级的各类指标。
-
-- `visualization.py` – Visualization tools for anomaly maps and t-SNE feature plots.  
-  可视化模块，用于生成异常热力图与 t-SNE 特征可视化。
-
-- `GLACLIP_lib/` – Wrapper of CLIP backbone, tokenizer and utility functions (`load`, `compute_similarity`, etc.).  
-  CLIP 主干、分词器以及若干工具函数的封装。
-
-
----
-
-## 9. Citation / 引用
+## 8. Citation / 引用
 
 If you find this repository helpful for your research, please consider citing the corresponding paper (bibtex entry to be added when the paper is officially available).
 
@@ -285,8 +263,9 @@ If you find this repository helpful for your research, please consider citing th
 
 ---
 
-## 10. Contact / 联系方式
+## 9. Contact / 联系方式
 
 For questions or issues, please open an issue in this repository.  
 如有问题或建议，请在本仓库中提交 issue 进行反馈。
+
 
