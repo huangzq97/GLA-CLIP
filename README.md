@@ -1,8 +1,8 @@
-# A Two-Stage Deep Decoupling and Alignment Framework for Industrial Defect Detection  
-# 面向工业缺陷检测的两阶段深度解耦与对齐框架
+# A Two-Stage Deep Decoupling and Alignment Vision-Language Model for Industrial Defect Detection  
+# 面向工业缺陷检测的两阶段深度解耦与对齐视觉语言模型
 
-> This repository contains the official implementation of **GLA-CLIP**, a two-stage deep decoupled alignment framework for industrial defect detection.  
-> 本仓库提供 **GLA-CLIP** 的官方实现：一个面向工业缺陷检测的两阶段深度解耦与对齐框架。
+> This repository contains the official implementation of **GLA-CLIP**, A Two-Stage Deep Decoupling and Alignment Vision-Language Model for Industrial Defect Detection.  
+> 本仓库提供 **GLA-CLIP** 的官方实现：一个面向工业缺陷检测的两阶段深度解耦与对齐视觉语言模型。
 
 ---
 
@@ -267,5 +267,6 @@ If you find this repository helpful for your research, please consider citing th
 
 For questions or issues, please open an issue in this repository.  
 如有问题或建议，请在本仓库中提交 issue 进行反馈。
+
 
 
