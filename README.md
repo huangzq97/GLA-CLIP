@@ -3,55 +3,7 @@
 
 > This repository contains the official implementation of **GLA-CLIP**, A Two-Stage Deep Decoupling and Alignment Vision-Language Model for Industrial Defect Detection.  
 > 本仓库提供 **GLA-CLIP** 的官方实现：一个面向工业缺陷检测的两阶段深度解耦与对齐视觉语言模型。
-```mermaid
-flowchart TB
-  subgraph P0[CLIP Pretraining Knowledge]
-    K0((General
-Natural-image
-Semantics))
-  end
 
-  subgraph D0[Industrial Defect Domain]
-    X0[[Industrial Images]]
-    Y0[[Defect Text
-Anchors]]
-  end
-
-  subgraph R0[Two-Stage Decoupling & Alignment (GLA-CLIP)]
-    S1[Stage 1:
-Text Anchor Disentanglement]
-    S2[Stage 2:
-Visual-Text Alignment]
-    A1[Deep Hierarchical
-Text Prompts]
-    A2[Text-side
-Residual Adapters]
-    FZ1[(Freeze
-Visual Encoder)]
-    FZ2[(Freeze
-Global Anchors)]
-  end
-
-  K0 -->|Transfer| A1
-  K0 -->|Transfer| A2
-  X0 --> S2
-  Y0 --> S1
-  A1 --> S1
-  A2 --> S1
-  S1 -->|Robust
-Normal/Anomaly
-Anchors| Y1[[Global & Local
-Text Anchors]]
-  FZ1 -. prevents .-> SD[Semantic Drift]
-  S2 -->|Pixel-level
-alignment| Z0[[Anomaly Map]]
-  FZ2 -. prevents .-> KF[Knowledge Forgetting]
-  Y1 --> S2
-
-  SD:::risk
-  KF:::risk
-  classDef risk fill:#ffe6e6,stroke:#cc0000,stroke-width:1px,color:#111;
-```
 ---
 
 ## 1. Overview / 总览
