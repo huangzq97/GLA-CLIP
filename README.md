@@ -1,5 +1,5 @@
-# A Two-Stage Deep Decoupling and Alignment Vision-Language Model for Industrial Defect Detection  
-# 面向工业缺陷检测的两阶段深度解耦与对齐视觉语言模型
+# GLA-CLIP: A Global-Local Deep Decoupling and Alignment Framework for Zero-Shot Industrial Anomaly Detection with Vision-Language Models  
+# 面向工业异常检测的两阶段深度解耦与对齐视觉语言模型
 
 > This repository contains the official implementation of **GLA-CLIP**, A Two-Stage Deep Decoupling and Alignment Vision-Language Model for Industrial Defect Detection.  
 > 本仓库提供 **GLA-CLIP** 的官方实现：一个面向工业缺陷检测的两阶段深度解耦与对齐视觉语言模型。
@@ -106,7 +106,7 @@ GLACLIP0126/
 ├─ visualization.py      # Heatmap & t-SNE visualization
 ├─ loss.py, logger.py, utils.py
 ├─ requirements.txt      # Python dependencies
-└─ Manuscript-0125.pdf   # Paper draft for this repository
+
 ```
 
 > For a detailed algorithmic description and experimental settings, please refer to `Manuscript-0125.pdf`.
